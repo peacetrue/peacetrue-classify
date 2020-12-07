@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: peacetrue-classify
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true
+
+---
+
+spring:
+  profiles: prod
+  cloud:
+    config:
+      uri: https://peacetrue:${MICROSERVICE_SECURITY_PASSWORD:password}@peacetrue.cn:8888

@@ -1,0 +1,6 @@
+rootProject.name = "peacetrue-classify"
+include("peacetrue-classify-service-api")
+include("peacetrue-classify-service-impl")
+include("peacetrue-classify-client")
+include("peacetrue-classify-controller")
+include("peacetrue-classify-app")

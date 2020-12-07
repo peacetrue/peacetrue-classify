@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: peacetrue-classify-client
+
+peacetrue:
+  classify:
+    url: http://localhost:8080

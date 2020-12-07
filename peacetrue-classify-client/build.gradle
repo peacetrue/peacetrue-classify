@@ -1,0 +1,17 @@
+description '地区feign客户端'
+
+dependencies {
+    api project(":peacetrue-classify-service-api")
+    api 'org.springframework.data:spring-data-commons'
+    api 'com.playtika.reactivefeign:feign-reactor-spring-configuration'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
+    testImplementation 'org.springframework.security:spring-security-config'
+    testImplementation 'org.springframework.security:spring-security-oauth2-client'
+    testImplementation 'org.springframework.security:spring-security-oauth2-jose'
+    testImplementation 'io.projectreactor.netty:reactor-netty'
+    testImplementation 'com.github.peacetrue:peacetrue-spring'
+    testImplementation 'org.springframework.data:spring-data-commons'
+    testImplementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    testImplementation 'org.springframework.cloud:spring-cloud-config-client'
+}

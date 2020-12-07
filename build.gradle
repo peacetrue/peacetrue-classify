@@ -1,0 +1,65 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url 'https://repo.spring.io/plugins-release' }
+    }
+
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.8.RELEASE"
+    }
+}
+
+
+allprojects { project ->
+
+    group "com.github.peacetrue.classify"
+    version "1.0.0-SNAPSHOT"
+    description "地区"
+
+    apply plugin: "java-library"
+    sourceCompatibility = 9
+    targetCompatibility = 9
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    }
+
+    apply plugin: "io.spring.dependency-management"
+    dependencyManagement {
+        imports {
+            mavenBom "com.github.peacetrue:peacetrue-dependencies:2.0.0-SNAPSHOT"
+        }
+    }
+
+    dependencies {
+        compileOnly "org.projectlombok:lombok"
+        annotationProcessor "org.projectlombok:lombok"
+        implementation "com.google.code.findbugs:jsr305"
+
+        testImplementation 'org.junit.jupiter:junit-jupiter-api'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+
+        testCompileOnly "org.projectlombok:lombok"
+        testAnnotationProcessor "org.projectlombok:lombok"
+        testImplementation "ch.qos.logback:logback-classic"
+        testImplementation 'io.projectreactor:reactor-test'
+        testImplementation 'org.unitils:unitils-core'
+        testImplementation 'org.jeasy:easy-random-core'
+        testImplementation 'org.yaml:snakeyaml'
+        testImplementation 'org.jeasy:easy-random-bean-validation', {
+            exclude('group': 'org.yaml')
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+}

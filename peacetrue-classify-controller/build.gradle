@@ -1,0 +1,11 @@
+description '地区控制器'
+
+dependencies {
+    api project(":peacetrue-classify-service-api")
+    implementation "com.github.peacetrue:peacetrue-spring"
+    implementation "org.springframework.boot:spring-boot-starter-webflux"
+    implementation "org.springframework.data:spring-data-commons"
+
+    testImplementation project(':peacetrue-classify-service-impl')
+    testImplementation project(path: ':peacetrue-classify-service-impl', configuration: 'testArtifacts')
+}
