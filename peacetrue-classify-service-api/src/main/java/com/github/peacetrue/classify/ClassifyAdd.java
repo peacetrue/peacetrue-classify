@@ -33,5 +33,7 @@ public class ClassifyAdd extends OperatorCapableImpl<Long> {
     /** 备注 */
     @Size(min = 1, max = 255)
     private String remark;
+    /** 序号 */
+    private Integer serialNumber;
 
 }

@@ -4,7 +4,7 @@ import {Create, required, SimpleForm, TextInput,} from 'react-admin';
 export const ClassifyCreate = (props) => {
     console.info('ClassifyCreate:', props);
     return (
-        <Create {...props} title={`新建${props.options.label}`}>
+        <Create {...props}>
             <SimpleForm>
                 <TextInput label={'编码'} source="code" validate={[required(),]}/>
                 <TextInput label={'名称'} source="name" validate={[required(),]}/>
