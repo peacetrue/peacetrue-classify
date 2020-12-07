@@ -1,4 +1,4 @@
-description '地区控制器'
+description '分类控制器'
 
 dependencies {
     api project(":peacetrue-classify-service-api")

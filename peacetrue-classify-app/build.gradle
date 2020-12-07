@@ -9,7 +9,7 @@ buildscript {
 }
 
 apply plugin: 'org.springframework.boot'
-description '地区应用'
+description '分类应用'
 
 dependencies {
 

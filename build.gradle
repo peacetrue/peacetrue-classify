@@ -16,7 +16,7 @@ allprojects { project ->
 
     group "com.github.peacetrue.classify"
     version "1.0.0-SNAPSHOT"
-    description "地区"
+    description "分类"
 
     apply plugin: "java-library"
     sourceCompatibility = 9

@@ -16,7 +16,7 @@ CREATE TABLE `classify`
     PRIMARY KEY (id)
 );
 
-COMMENT ON TABLE `classify` IS '地区';
+COMMENT ON TABLE `classify` IS '分类';
 COMMENT ON COLUMN `classify`.id IS '主键';
 
 insert into classify (id, code, name, remark, parent_id, level, leaf, serial_number, creator_id, created_time,

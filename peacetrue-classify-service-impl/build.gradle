@@ -1,4 +1,4 @@
-description '地区服务r2dbc实现'
+description '分类服务r2dbc实现'
 
 configurations {
     testArtifacts.extendsFrom testRuntime, testImplementation

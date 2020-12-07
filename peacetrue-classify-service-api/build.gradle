@@ -1,4 +1,4 @@
-description '地区服务接口'
+description '分类服务接口'
 
 dependencies {
     api 'com.github.peacetrue:peacetrue-core'

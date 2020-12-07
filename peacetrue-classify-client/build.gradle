@@ -1,4 +1,4 @@
-description '地区feign客户端'
+description '分类feign客户端'
 
 dependencies {
     api project(":peacetrue-classify-service-api")
