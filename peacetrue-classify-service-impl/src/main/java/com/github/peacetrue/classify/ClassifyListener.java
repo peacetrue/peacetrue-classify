@@ -75,7 +75,7 @@ public class ClassifyListener {
         ClassifyVO source = (ClassifyVO) event.getSource();
         log.info("新增分类节点[{}]后，设置节点序号", source.getId());
         setSerialNumber(source)
-                .publishOn(Schedulers.elastic())
+                .publishOn(Schedulers.boundedElastic())
                 .subscribe();
     }
 
