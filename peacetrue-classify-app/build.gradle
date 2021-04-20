@@ -30,5 +30,5 @@ dependencies {
     implementation 'org.springframework.security:spring-security-oauth2-jose'
     implementation 'com.nimbusds:oauth2-oidc-sdk:7+'
 
-    testImplementation 'org.springframework.security:spring-security-oauth2-client'
+//    testImplementation 'org.springframework.security:spring-security-oauth2-client'
 }

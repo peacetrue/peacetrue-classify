@@ -1,5 +1,6 @@
 package com.github.peacetrue.classify;
 
+import com.github.peacetrue.spring.data.relational.TableSchemaInitializer;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -31,5 +32,10 @@ public class ServiceClassifyAutoConfiguration {
     @ConditionalOnMissingBean(R2dbcEntityOperations.class)
     public R2dbcEntityTemplate r2dbcEntityTemplate(DatabaseClient databaseClient) {
         return new R2dbcEntityTemplate(databaseClient);
+    }
+
+    @Bean
+    public TableSchemaInitializer classifyTableSchemaInitializer() {
+        return new TableSchemaInitializer(Classify.class, "/schema-classify-mysql.sql");
     }
 }

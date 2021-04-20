@@ -25,10 +25,10 @@ public class ClassifyQuery extends OperatorCapableImpl<Long> {
     private String code;
     /** 名称 */
     private String name;
-    /** 备注 */
-    private String remark;
     /** 类型 */
     private Long typeId;
+    /** 类型编码 */
+    private String typeCode;
     /** 父节点 */
     private Long parentId;
     /** 层级 */
@@ -45,5 +45,16 @@ public class ClassifyQuery extends OperatorCapableImpl<Long> {
     public ClassifyQuery(Long[] id) {
         this.id = id;
     }
+
+    public ClassifyQuery(String code) {
+        this.code = code;
+    }
+
+    public static ClassifyQuery fromParentId(Long parentId) {
+        ClassifyQuery classifyQuery = new ClassifyQuery();
+        classifyQuery.setParentId(parentId);
+        return classifyQuery;
+    }
+
 
 }

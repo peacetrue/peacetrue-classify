@@ -38,4 +38,9 @@ public interface ClassifyService {
     /** 删除 */
     Mono<Integer> delete(ClassifyDelete params);
 
+    /** 重新排序 */
+    Mono<Void> rearrange(ClassifyRearrange params);
+
+
+
 }

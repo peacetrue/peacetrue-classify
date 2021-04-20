@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@MultiNotNull(propertyNames = {"name", "remark", "level", "leaf", "serialNumber"})
+@MultiNotNull(propertyNames = {"name", "remark", "serialNumber"})
 public class ClassifyModify extends OperatorCapableImpl<Long> {
 
     private static final long serialVersionUID = 0L;
@@ -30,6 +30,8 @@ public class ClassifyModify extends OperatorCapableImpl<Long> {
     /** 备注 */
     @Size(min = 1, max = 255)
     private String remark;
+    /** 序号 */
+    private Integer serialNumber;
 
 
 }

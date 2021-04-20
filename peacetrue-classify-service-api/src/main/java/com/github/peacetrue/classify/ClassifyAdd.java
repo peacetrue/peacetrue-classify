@@ -7,6 +7,8 @@ import lombok.ToString;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -33,7 +35,44 @@ public class ClassifyAdd extends OperatorCapableImpl<Long> {
     /** 备注 */
     @Size(min = 1, max = 255)
     private String remark;
-    /** 序号 */
-    private Integer serialNumber;
+    /** 子节点 */
+    private List<ClassifyAdd> children;
+
+    public ClassifyAdd() {
+    }
+
+    public ClassifyAdd(Long parentId, String code, String name) {
+        this(parentId, code, name, (String) null);
+    }
+
+    public ClassifyAdd(Long parentId, String code, String name, String remark) {
+        this(parentId, code, name, remark, (List<ClassifyAdd>) null);
+    }
+
+    public ClassifyAdd(String code, String name, ClassifyAdd... children) {
+        this(null, code, name, null, children);
+    }
+
+
+    public ClassifyAdd(String code, String name, String remark, ClassifyAdd... children) {
+        this(null, code, name, remark, children);
+    }
+
+    public ClassifyAdd(Long parentId, String code, String name, ClassifyAdd... children) {
+        this(parentId, code, name, null, children);
+    }
+
+    public ClassifyAdd(Long parentId, String code, String name, String remark, ClassifyAdd... children) {
+        this(parentId, code, name, remark, children != null && children.length > 0 ? Arrays.asList(children) : null);
+    }
+
+    public ClassifyAdd(Long parentId, String code, String name, String remark, List<ClassifyAdd> children) {
+        this.parentId = parentId;
+        this.code = code;
+        this.name = name;
+        this.remark = remark;
+        this.children = children;
+    }
+
 
 }

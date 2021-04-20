@@ -24,6 +24,8 @@ public class ClassifyVO implements Serializable {
     private String remark;
     /** 类型 */
     private Long typeId;
+    /** 类型编码 */
+    private String typeCode;
     /** 父节点 */
     private Long parentId;
     /** 层级 */
@@ -40,6 +42,8 @@ public class ClassifyVO implements Serializable {
     private Long modifierId;
     /** 最近修改时间 */
     private LocalDateTime modifiedTime;
+    /** 父节点 */
+    private ClassifyVO parent;
     /** 子节点 */
     private List<ClassifyVO> children;
 }

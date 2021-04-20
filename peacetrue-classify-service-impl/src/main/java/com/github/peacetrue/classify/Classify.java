@@ -1,5 +1,6 @@
 package com.github.peacetrue.classify;
 
+import com.github.peacetrue.core.IdCapable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-public class Classify implements Serializable {
+public class Classify implements Serializable, IdCapable<Long> {
 
     private static final long serialVersionUID = 0L;
 
@@ -31,6 +32,8 @@ public class Classify implements Serializable {
     private String remark;
     /** 类型 */
     private Long typeId;
+    /** 类型编码 */
+    private String typeCode;
     /** 父节点 */
     private Long parentId;
     /** 层级 */

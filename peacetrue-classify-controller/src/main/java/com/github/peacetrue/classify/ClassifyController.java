@@ -89,5 +89,11 @@ public class ClassifyController {
         return classifyService.delete(params);
     }
 
+    @PutMapping("/rearrange")
+    public Mono<Void> rearrange(ClassifyRearrange params) {
+        log.info("重新排序[{}]", params);
+        return classifyService.rearrange(params);
+    }
+
 
 }
