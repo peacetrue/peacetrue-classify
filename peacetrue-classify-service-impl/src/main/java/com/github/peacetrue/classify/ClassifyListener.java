@@ -33,10 +33,9 @@ public class ClassifyListener {
     public Mono<Integer> setSerialNumber(ClassifyVO vo) {
 //        Query parentId = Query.query(Criteria.where("parentId").is(vo.getParentId()));
         return entityOperations.getDatabaseClient()
-                .execute("select ifnull(max(serial_number),0) from classify where parent_id=?")
+                .sql("select ifnull(max(serial_number),0) from classify where parent_id=?")
                 .bind(0, vo.getParentId())
-                .as(Long.class)
-                .fetch()
+                .map(row -> row.get(0, Long.class))
                 .first()
                 .flatMap(count -> this.setSerialNumber(vo.getId(), count.intValue() + 1));
     }
@@ -75,7 +74,7 @@ public class ClassifyListener {
         ClassifyVO source = (ClassifyVO) event.getSource();
         log.info("新增分类节点[{}]后，设置节点序号", source.getId());
         setSerialNumber(source)
-                .publishOn(Schedulers.boundedElastic())
+                .subscribeOn(Schedulers.boundedElastic())
                 .subscribe();
     }
 

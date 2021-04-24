@@ -1,6 +1,9 @@
 logging:
   level:
-    com:
-      github: TRACE
-    org:
-      springframework: TRACE
+    com.github.peacetrue: trace
+#    org.springframework: debug
+
+peacetrue:
+  init:
+    schema-script-locations:
+      'com.github.peacetrue.classify.Classify': /schema-classify-h2.sql

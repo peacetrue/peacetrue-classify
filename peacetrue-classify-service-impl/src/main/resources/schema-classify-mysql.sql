@@ -18,7 +18,5 @@ CREATE TABLE `classify`
 ) comment '分类';
 
 insert into classify (id, type_id, type_code, code, name, remark, parent_id, level, leaf, serial_number, creator_id,
-                      created_time,
-                      modifier_id,
-                      modified_time)
-values (1, 1, 'test', 'root', '根节点', '', 1, 1, 1, 1, 1, current_timestamp, 1, current_timestamp);
+                      created_time, modifier_id, modified_time)
+values (1, 1, 'root', 'root', '根节点', '', 1, 1, 1, 1, 1, current_timestamp, 1, current_timestamp);

@@ -3,13 +3,16 @@ package com.github.peacetrue.classify;
 import com.github.peacetrue.spring.util.BeanUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.jeasy.random.EasyRandom;
+import org.jeasy.random.EasyRandomParameters;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.test.context.ActiveProfiles;
 import reactor.core.scheduler.Schedulers;
 import reactor.test.StepVerifier;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 
@@ -19,10 +22,11 @@ import java.util.Arrays;
  **/
 @Slf4j
 @SpringBootTest(classes = TestServiceClassifyAutoConfiguration.class)
+@ActiveProfiles("classify-service-test")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class ClassifyServiceImplTest {
 
-    public static final EasyRandom EASY_RANDOM = new EasyRandom();
+    public static final EasyRandom EASY_RANDOM = new EasyRandom(new EasyRandomParameters().randomize(Serializable.class, () -> 1L));
     public static final ClassifyAdd ADD = EASY_RANDOM.nextObject(ClassifyAdd.class);
     public static final ClassifyModify MODIFY = EASY_RANDOM.nextObject(ClassifyModify.class);
     public static ClassifyVO vo;

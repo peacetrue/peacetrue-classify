@@ -1,10 +1,11 @@
 buildscript {
     repositories {
-        maven { url 'https://repo.spring.io/plugins-release' }
+        mavenLocal()
+        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
     }
 
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.3.3.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.4.5")
     }
 }
 
