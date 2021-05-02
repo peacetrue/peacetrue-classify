@@ -1,0 +1,4 @@
+peacetrue:
+  init:
+    conditional-script-locations:
+      'com.github.peacetrue.classify.Classify': /schema-classify-mysql.sql

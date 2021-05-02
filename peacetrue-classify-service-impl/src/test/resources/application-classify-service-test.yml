@@ -5,5 +5,5 @@ logging:
 
 peacetrue:
   init:
-    schema-script-locations:
+    script-locations:
       'com.github.peacetrue.classify.Classify': /schema-classify-h2.sql
